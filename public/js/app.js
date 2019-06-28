@@ -1,9 +1,7 @@
-console.log('JS loading from client');
 const weatherForm = document.querySelector('form');
 const searchText = document.querySelector('input');
 const message_1 = document.getElementById('message-1');
 const message_2 = document.getElementById('message-2');
-
 
 weatherForm.addEventListener('submit', (e) => {
     message_1.textContent = "Loading...";
