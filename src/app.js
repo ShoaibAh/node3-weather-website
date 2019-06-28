@@ -1,10 +1,11 @@
 const path = require('path');
 const express = require('express');
-const app = express();
 const hbs = require('hbs');
-
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
+
+const app = express();
+const port = process.env.PORT || 3000;
 
 //Define paths for express config
 const publicDirecotryPath = path.join(__dirname, '../public');
@@ -68,6 +69,6 @@ app.get('*', (req, res) => {
     res.render('404', {title: "404", name:"Shoaib Ahmed", errorMessage: 'Page not found!'})
 });
 
-app.listen(3000, ()=> {
-    console.log('Express server running on port 3000');
+app.listen(port, ()=> {
+    console.log('Express server running on port ' + port);
 })
